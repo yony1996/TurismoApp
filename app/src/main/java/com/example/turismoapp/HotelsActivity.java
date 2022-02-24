@@ -21,6 +21,7 @@ public class HotelsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityHotelsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
 
         binding.gridHoteles.setLayoutManager(new GridLayoutManager(this,2));
         DBHoteles dbHoteles=new DBHoteles(HotelsActivity.this);

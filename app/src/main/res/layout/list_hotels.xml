@@ -8,9 +8,10 @@
             android:layout_marginTop="18dp"
             android:layout_margin="10dp"
             android:elevation="8dp"
+            app:cardBackgroundColor="#0043A8"
             app:cardCornerRadius="8dp"
             android:layout_width="200dp"
-            android:layout_height="200dp">
+            android:layout_height="250dp">
         <LinearLayout
                 android:layout_margin="8dp"
                 android:gravity="center"
@@ -20,7 +21,7 @@
             <ImageView
                     android:id="@+id/photo"
                     android:layout_width="match_parent"
-                    android:layout_height="145dp"
+                    android:layout_height="150dp"
                     android:src="@drawable/ic_launcher_background"
             />
 
@@ -31,7 +32,7 @@
                     android:gravity="center"
                     android:layout_marginTop="8dp"
                     android:text="Nombre"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"/>
 

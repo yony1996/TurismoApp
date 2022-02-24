@@ -15,7 +15,7 @@ public class Utils {
             Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
             Bitmap scalable = Bitmap.createScaledBitmap(bitmap, 150, 150, false);
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            scalable.compress(Bitmap.CompressFormat.PNG, 50, stream);
+            scalable.compress(Bitmap.CompressFormat.PNG, 100, stream);
             byte[] byteData = stream.toByteArray();
             String imageString = Base64.encodeToString(byteData, Base64.DEFAULT);
             return imageString;

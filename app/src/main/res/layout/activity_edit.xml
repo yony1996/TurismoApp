@@ -5,8 +5,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:id="@+id/insertLayout"
-        tools:context=".InsertActivity">
+        android:id="@+id/uploadLayout"
+        tools:context=".editActivity">
     <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -42,7 +42,6 @@
                         android:hint="nombre"
                         android:inputType="text"/>
             </LinearLayout>
-
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -81,7 +80,6 @@
                         android:hint="telefono 2"
                         android:inputType="phone"/>
             </LinearLayout>
-
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -101,7 +99,6 @@
                         android:hint="direccion"
                         android:inputType="text"/>
             </LinearLayout>
-
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -177,11 +174,11 @@
             </LinearLayout>
 
             <Button
-                    android:id="@+id/saveInsert"
+                    android:id="@+id/saveUpdate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Guardar"/>
+                    android:text="Editar"/>
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

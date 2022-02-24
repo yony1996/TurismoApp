@@ -3,7 +3,9 @@ package com.example.turismoapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import com.example.turismoapp.Database.DBHelper;
 import com.example.turismoapp.databinding.ActivityMainBinding;
 
 import java.util.Timer;
@@ -20,19 +22,20 @@ public class SplashActivity extends Activity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         sharedPreferences = getSharedPreferences("credentials", MODE_PRIVATE);
+
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-               //verification();
-                goToMenuHotels();
+                verification();
             }
         };
 
         Timer tiempo = new Timer();
         tiempo.schedule(task, 3000);
     }
+
     private void verification() {
-        String Passport = sharedPreferences.getString("passport","");
+        String Passport = sharedPreferences.getString("passport", "");
         if (Passport.contains(".")) {
             goToMenuHotels();
 
@@ -42,7 +45,8 @@ public class SplashActivity extends Activity {
             finish();
         }
     }
-    private void goToMenuHotels(){
+
+    private void goToMenuHotels() {
         Intent intent = new Intent(SplashActivity.this, HotelsActivity.class);
         startActivity(intent);
         finish();

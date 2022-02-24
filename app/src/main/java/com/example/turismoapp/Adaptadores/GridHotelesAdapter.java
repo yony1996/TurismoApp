@@ -1,6 +1,7 @@
 package com.example.turismoapp.Adaptadores;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.turismoapp.Entidades.Hoteles;
 import com.example.turismoapp.Helpers.Utils;
 import com.example.turismoapp.R;
+import com.example.turismoapp.VerHotelActivity;
 
 import java.util.ArrayList;
 
@@ -60,7 +62,9 @@ public class GridHotelesAdapter extends RecyclerView.Adapter<GridHotelesAdapter.
                 @Override
                 public void onClick(View view) {
                     Context context=view.getContext();
-                    Toast.makeText(context, ""+listaHoteles.get(getAdapterPosition()).getId(), Toast.LENGTH_SHORT).show();
+                    Intent intent =new Intent(context, VerHotelActivity.class);
+                    intent.putExtra("id",listaHoteles.get(getAdapterPosition()).getId());
+                    context.startActivity(intent);
                 }
             });
         }

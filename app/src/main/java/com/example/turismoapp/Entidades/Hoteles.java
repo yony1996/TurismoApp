@@ -3,9 +3,11 @@ package com.example.turismoapp.Entidades;
 public class Hoteles {
     private int id;
     private String nombre;
-    private String telefono;
+    private String telefono1;
+    private String telefono2;
     private String direccion;
-    private String email;
+    private String url;
+    private String descripcion;
     private String image;
 
     public int getId() {
@@ -24,12 +26,20 @@ public class Hoteles {
         this.nombre = nombre;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getTelefono1() {
+        return telefono1;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setTelefono1(String telefono1) {
+        this.telefono1 = telefono1;
+    }
+
+    public String getTelefono2() {
+        return telefono2;
+    }
+
+    public void setTelefono2(String telefono2) {
+        this.telefono2 = telefono2;
     }
 
     public String getDireccion() {
@@ -40,12 +50,20 @@ public class Hoteles {
         this.direccion = direccion;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUrl() {
+        return url;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getImage() {

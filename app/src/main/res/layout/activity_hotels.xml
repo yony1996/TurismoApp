@@ -5,7 +5,6 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_gradiend"
         android:orientation="horizontal"
         tools:context=".HotelsActivity">
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -28,7 +27,8 @@
             android:layout_marginBottom="18dp"
             android:layout_marginRight="18dp"
             android:src="@drawable/ic_add"
-            app:backgroundTint="@color/design_default_color_primary" app:layout_constraintEnd_toEndOf="parent"
+            app:backgroundTint="#0043A8"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
 

@@ -23,7 +23,7 @@ public class InsertActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityInsertBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        getSupportActionBar().hide();
         binding.chosse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,9 +42,11 @@ public class InsertActivity extends AppCompatActivity {
                 DBHoteles dbHoteles = new DBHoteles(InsertActivity.this);
                 long id = dbHoteles.insertHotel(
                         binding.hotelNombre.getText().toString().trim(),
-                        binding.hotelTelefono.getText().toString().trim(),
+                        binding.hotelTelefono1.getText().toString().trim(),
+                        binding.hotelTelefono2.getText().toString().trim(),
                         binding.hotelDireccion.getText().toString().trim(),
-                        binding.hotelEmail.getText().toString().trim(),
+                        binding.hotelUrl.getText().toString().trim(),
+                        binding.hotelDescripcion.getText().toString().trim(),
                         binding.image.getText().toString().trim()
                 );
                 if (id > 0) {
@@ -79,8 +81,10 @@ public class InsertActivity extends AppCompatActivity {
     public void LimpiarInsert() {
         binding.hotelNombre.setText("");
         binding.hotelDireccion.setText("");
-        binding.hotelEmail.setText("");
-        binding.hotelTelefono.setText("");
+        binding.hotelUrl.setText("");
+        binding.hotelTelefono1.setText("");
+        binding.hotelTelefono2.setText("");
+        binding.hotelDescripcion.setText("");
         binding.image.setText("");
         binding.photo.setImageResource(R.drawable.ic_add_photo);
     }

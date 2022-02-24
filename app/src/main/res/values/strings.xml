@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">TurismoApp</string>
+    <string name="secundario">Estamos ubicados en la dirección %1$s para que te podamos brindar mas información puedes
+        comunicarte al telefono %2$s - %3$s o también puedes acceder a nuestra página web </string>
+    <string name="web">%1$s</string>
 </resources>
