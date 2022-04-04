@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+            android:elevation="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" android:layout_marginTop="8dp" android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" android:layout_marginBottom="8dp">
+      <LinearLayout
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+          <LinearLayout
+                  android:orientation="vertical"
+                  android:layout_width="150dp"
+                  android:layout_height="match_parent">
+              <ImageView
+                      android:id="@+id/photo"
+                      android:scaleType="fitXY"
+                      android:src="@drawable/ic_launcher_background"
+                      android:layout_width="150dp"
+                      android:layout_height="match_parent"/>
+          </LinearLayout>
+          <LinearLayout
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+              <TextView
+                      android:id="@+id/hotelNombre"
+                      android:text="Nombre Hotel"
+                      android:textSize="20sp"
+                      android:textStyle="bold"
+                      android:layout_marginTop="8dp"
+                      android:layout_marginLeft="8dp"
+                      android:layout_marginRight="8dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+              <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                  <TextView
+                          android:id="@+id/hotelCategoria"
+                          android:text="categoría"
+                          android:textColor="@color/white"
+                          android:textStyle="bold"
+                          android:padding="3dp"
+                          android:layout_marginLeft="8dp"
+                          android:layout_marginTop="3dp"
+                          android:layout_marginBottom="3dp"
+                          android:textSize="12sp"
+                          android:background="@drawable/bg_category"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"/>
+                  <TextView
+                          android:id="@+id/hotelcanton"
+                          android:text="canton"
+                          android:textColor="@color/white"
+                          android:textStyle="bold"
+                          android:padding="3dp"
+                          android:layout_marginLeft="8dp"
+                          android:layout_marginTop="3dp"
+                          android:layout_marginBottom="3dp"
+                          android:textSize="12sp"
+                          android:background="@drawable/bg_canton"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"/>
+              </LinearLayout>
+
+              <LinearLayout
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                  <TextView
+                          android:id="@+id/hotelAccesibilidad"
+                          android:text="8.5"
+                          android:textStyle="bold"
+                          android:padding="5dp"
+                          android:layout_margin="8dp"
+                          android:textSize="15sp"
+                          android:textColor="@color/white"
+                          android:background="@drawable/bg_button"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" tools:ignore="HardcodedText"/>
+                  <TextView
+                          android:text="Accesible"
+                          android:textSize="18sp"
+                          android:layout_gravity="center"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+              </LinearLayout>
+
+              <LinearLayout
+                      android:layout_marginTop="5dp"
+                      android:layout_marginBottom="5dp"
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                  <ImageView
+                          android:layout_margin="8dp"
+                          android:layout_gravity="center"
+                          android:src="@drawable/ic_location"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"/>
+                  <TextView
+                          android:id="@+id/hotelReferencia"
+                          android:text="dirección"
+                          android:layout_margin="5dp"
+                          android:textSize="15sp"
+                          android:layout_gravity="center"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+              </LinearLayout>
+
+              <LinearLayout
+                      android:layout_marginTop="5dp"
+                      android:layout_marginBottom="5dp"
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                  <ImageView
+                          android:layout_margin="8dp"
+                          android:layout_gravity="center"
+                          android:src="@drawable/ic_hotel"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"/>
+                  <TextView
+                          android:id="@+id/hotelHabitaciones"
+                          android:layout_margin="5dp"
+                          android:text="@string/habitaciones"
+                          android:textSize="15sp"
+                          android:layout_gravity="center"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+              </LinearLayout>
+
+              <LinearLayout
+                      android:layout_marginTop="5dp"
+                      android:layout_marginBottom="5dp"
+                      android:orientation="horizontal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content">
+                  <ImageView
+                          android:layout_margin="8dp"
+                          android:layout_gravity="center"
+                          android:src="@drawable/ic_money"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"/>
+                  <TextView
+                          android:id="@+id/hotelPrecio"
+                          android:layout_margin="5dp"
+                          android:text="@string/precio"
+                          android:textSize="15sp"
+                          android:layout_gravity="center"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+              </LinearLayout>
+
+
+          </LinearLayout>
+
+      </LinearLayout>
+        <TextView
+                android:id="@+id/idHotel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="id"
+                android:visibility="gone"/>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

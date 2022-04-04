@@ -6,18 +6,23 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "Hotels.db";
     public static final String TABLE_HOTELS = "tblhotel";
     public static final String TABLE_USERS = "tblusers";
 
     public static final String CREATE_TABLE_HOTELS = "CREATE TABLE " + TABLE_HOTELS + "(" +
             "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-            "nombre TEXT NOT NULL," +
-            "telefono1 TEXT NOT NULL," +
+            "nombre TEXT ," +
+            "categoria TEXT,"+
+            "accecibilidad REAL,"+
+            "referencia TEXT,"+
+            "habitaciones INTEGER,"+
+            "precio REAL,"+
+            "telefono1 TEXT," +
             "telefono2 TEXT," +
-            "direccion TEXT NOT NULL," +
-            "url TEXT NOT NULL," +
+            "direccion TEXT," +
+            "url TEXT," +
             "descripcion TEXT," +
             "image TEXT);";
     public static final String CREATE_TABLE_USERS = "CREATE TABLE " + TABLE_USERS + "(" +
@@ -42,10 +47,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " +TABLE_HOTELS);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
         onCreate(sqLiteDatabase);
-
     }
 }

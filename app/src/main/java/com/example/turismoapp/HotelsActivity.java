@@ -1,9 +1,9 @@
 package com.example.turismoapp;
 
 import android.content.Intent;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.example.turismoapp.Adaptadores.GridHotelesAdapter;
@@ -22,11 +22,9 @@ public class HotelsActivity extends AppCompatActivity {
         binding=ActivityHotelsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
-
-        binding.gridHoteles.setLayoutManager(new GridLayoutManager(this,2));
+        binding.gridHoteles.setLayoutManager(new LinearLayoutManager(this));
         DBHoteles dbHoteles=new DBHoteles(HotelsActivity.this);
         listaArrayHoteles=new ArrayList<>();
-
         GridHotelesAdapter adapter=new GridHotelesAdapter(dbHoteles.mostrarHoteles());
         binding.gridHoteles.setAdapter(adapter);
         binding.refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -41,5 +39,6 @@ public class HotelsActivity extends AppCompatActivity {
             Intent intent=new Intent(HotelsActivity.this,InsertActivity.class);
             startActivity(intent);
         });
+
     }
 }

@@ -13,20 +13,22 @@ import java.util.ArrayList;
 
 public class DBHoteles extends DBHelper {
     Context context;
-
     public DBHoteles(@Nullable Context context) {
         super(context);
         this.context = context;
     }
-
-    public long insertHotel(String nombre, String telefono1, String telefono2, String direccion, String url, String descripcion, String image) {
-
+    public long insertHotel(String nombre,String categoria,String accecibilidad,String referencia,Integer habitaciones,float precio ,String telefono1, String telefono2, String direccion, String url, String descripcion, String image) {
         long id = 0;
         try {
             DBHelper dbHelper = new DBHelper(context);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
             ContentValues values = new ContentValues();
             values.put("nombre", nombre);
+            values.put("categoria",categoria);
+            values.put("accecibilidad",accecibilidad);
+            values.put("referencia",referencia);
+            values.put("habitaciones",habitaciones);
+            values.put("precio",precio);
             values.put("telefono1", telefono1);
             values.put("telefono2", telefono2);
             values.put("direccion", direccion);
@@ -36,51 +38,56 @@ public class DBHoteles extends DBHelper {
             id = db.insert(TABLE_HOTELS, null, values);
         } catch (Exception ex) {
             ex.printStackTrace();
+           return id;
         }
         return id;
     }
     public ArrayList<Hoteles> mostrarHoteles() {
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-
         ArrayList<Hoteles> listaHoteles = new ArrayList<>();
         Hoteles hotels = null;
         Cursor cursorHoteles = null;
-
-        cursorHoteles = db.rawQuery("SELECT id,nombre,image FROM " + TABLE_HOTELS, null);
+        cursorHoteles = db.rawQuery("SELECT id,nombre,categoria,accecibilidad,referencia,habitaciones,precio,image FROM " + TABLE_HOTELS, null);
         listaHoteles.clear();
         if (cursorHoteles.moveToFirst()) {
-
             do {
                 hotels = new Hoteles();
                 hotels.setId(cursorHoteles.getInt(0));
                 hotels.setNombre(cursorHoteles.getString(1));
-                hotels.setImage(cursorHoteles.getString(2));
+                hotels.setCategoria(cursorHoteles.getString(2));
+                hotels.setAccecibilidad(cursorHoteles.getString(3));
+                hotels.setReferencia(cursorHoteles.getString(4));
+                hotels.setHabitaciones(cursorHoteles.getInt(5));
+                hotels.setPrecio(cursorHoteles.getFloat(6));
+                hotels.setImage(cursorHoteles.getString(7));
                 listaHoteles.add(hotels);
             } while (cursorHoteles.moveToNext());
         }
         cursorHoteles.close();
-
         return listaHoteles;
     }
     public Hoteles verHoteles(int id) {
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-
         Hoteles hotels = null;
         Cursor cursorHoteles = null;
-
         cursorHoteles = db.rawQuery("SELECT * FROM " + TABLE_HOTELS + " WHERE id=" + id + " LIMIT 1", null);
         if (cursorHoteles.moveToFirst()) {
             hotels = new Hoteles();
             hotels.setId(cursorHoteles.getInt(0));
             hotels.setNombre(cursorHoteles.getString(1));
-            hotels.setTelefono1(cursorHoteles.getString(2));
-            hotels.setTelefono2(cursorHoteles.getString(3));
-            hotels.setDireccion(cursorHoteles.getString(4));
-            hotels.setUrl(cursorHoteles.getString(5));
-            hotels.setDescripcion(cursorHoteles.getString(6));
-            hotels.setImage(cursorHoteles.getString(7));
+            hotels.setCategoria(cursorHoteles.getString(2));
+            hotels.setAccecibilidad(cursorHoteles.getString(3));
+            hotels.setReferencia(cursorHoteles.getString(4));
+            hotels.setHabitaciones(cursorHoteles.getInt(5));
+            hotels.setPrecio(cursorHoteles.getFloat(6));
+            hotels.setTelefono1(cursorHoteles.getString(7));
+            hotels.setTelefono2(cursorHoteles.getString(8));
+            hotels.setDireccion(cursorHoteles.getString(9));
+            hotels.setUrl(cursorHoteles.getString(10));
+            hotels.setDescripcion(cursorHoteles.getString(11));
+            hotels.setImage(cursorHoteles.getString(12));
         }
         cursorHoteles.close();
         return hotels;
@@ -105,15 +112,12 @@ public class DBHoteles extends DBHelper {
     public User loginUser(String email, String contrasena){
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-
         User user = null;
         Cursor cursorUser = null;
-
         cursorUser = db.rawQuery("SELECT email,contrasena,rol FROM " + TABLE_USERS + " WHERE email=? AND contrasena= ?",new String[]{email,contrasena});
         if (cursorUser.moveToFirst()) {
             user = new User();
             user.setRol(cursorUser.getString(2));
-
         }
         cursorUser.close();
         return user;

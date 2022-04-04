@@ -10,7 +10,6 @@ import java.io.ByteArrayOutputStream;
 
 public class Utils {
     public String imageToBase64(ImageView image) {
-
         try {
             Bitmap bitmap = ((BitmapDrawable) image.getDrawable()).getBitmap();
             Bitmap scalable = Bitmap.createScaledBitmap(bitmap, 150, 150, false);
@@ -29,7 +28,6 @@ public class Utils {
         byte[] imageBitmap = Base64.decode(image, Base64.DEFAULT);
         Bitmap decodeByte = BitmapFactory.decodeByteArray(imageBitmap, 0, imageBitmap.length);
         return decodeByte;
-
     }
 
 
